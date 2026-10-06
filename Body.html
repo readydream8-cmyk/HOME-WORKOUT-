@@ -1,0 +1,452 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GYM Member App</<title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#050B2E;
+    color:white;
+    padding-bottom:80px;
+}
+
+.header{
+    padding:25px 20px;
+    background:linear-gradient(135deg,#15151a,#24242b);
+}
+
+.header p{
+    color:#aaa;
+    font-size:14px;
+}
+
+.header h1{
+    margin-top:5px;
+    font-size:28px;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    padding:15px;
+}
+
+.card{
+    background:#17171b;
+    border:1px solid #29292f;
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.member{
+    background:linear-gradient(135deg,#202027,#121216);
+}
+
+.member-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.avatar{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#333;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+}
+
+.active{
+    background:#123d27;
+    color:#35e58b;
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.member h2{
+    margin-top:15px;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:18px;
+}
+
+.info-box{
+    background:#101014;
+    padding:12px;
+    border-radius:12px;
+}
+
+.info-box small{
+    color:#888;
+}
+
+.info-box strong{
+    display:block;
+    margin-top:5px;
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+.exercise{
+    background:#24242a;
+    padding:14px;
+    border-radius:12px;
+    margin:8px 0;
+    display:flex;
+    justify-content:space-between;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:#fff;
+    color:#111;
+    font-size:16px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+.progress{
+    height:12px;
+    background:#303036;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0 8px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#fff;
+    transition:.4s;
+}
+
+.food{
+    line-height:2;
+    color:#ddd;
+}
+
+.notice{
+    background:#202027;
+    padding:15px;
+    border-radius:12px;
+    color:#ddd;
+    line-height:1.5;
+}
+
+.bottom{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:65px;
+    background:#151519;
+    border-top:1px solid #29292f;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.bottom div{
+    text-align:center;
+    color:#999;
+    font-size:12px;
+}
+
+.bottom .selected{
+    color:white;
+}
+
+.reset{
+    background:#29292f;
+    color:white;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <p>🔱HAR HAR MAHADEV 🔱 </p>
+    <h1>SATART NOW TODAY WORK</h1>
+</div>
+
+<div class="container">
+
+<!-- MEMBERSHIP CARD -->
+
+<div class="card member">
+
+    <div class="member-top">
+
+        <div class="avatar">🥶</div>
+
+        <div class="active">
+            ● MEMBER AMAN
+        </div>
+
+    </div>
+
+    <h2>👋30 DAYS CHALLENGE 🥶 WORK OUT 🔥 </h2>
+
+    <div class="info">
+
+        <div class="info-box">
+            <small>Member ID</small>
+            <strong>GYM-1026</strong>
+        </div>
+
+        <div class="info-box">
+            <small>Plan</small>
+            <strong>YEARLY</strong>
+        </div>
+
+        <div class="info-box">
+            <small>Started</small>
+            <strong>06 Oct 2026</strong>
+        </div>
+
+        <div class="info-box">
+            <small>Expires</small>
+            <strong>NOT FIX DATE </strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TODAY -->
+
+<div class="card">
+
+    <h2>🔥 Today's Workout</h2>
+
+    <div class="exercise">
+        <span>🏋️ Squats</span>
+        <b>3 × 10</b>
+    </div>
+
+    <div class="exercise">
+        <span>💪 Push-ups</span>
+        <b>3 Sets</b>
+    </div>
+
+    <div class="exercise">
+        <span>🦵 Lunges</span>
+        <b>2 × 8</b>
+    </div>
+
+    <div class="exercise">
+        <span>🔥 Plank</span>
+        <b>3 × 20s</b>
+    </div>
+
+    <div class="exercise">
+        <span>🏃 Cardio</span>
+        <b>10 min</b>
+    </div>
+
+    <button onclick="completeWorkout()">
+        ✅ Complete Workout
+    </button>
+
+</div>
+
+
+<!-- 30 DAYS -->
+
+<div class="card">
+
+    <h2>📊 30-Day Challenge</h2>
+
+    <p id="dayText">Day 1 of 30</p>
+
+    <div class="progress">
+        <div class="progress-bar" id="bar"></div>
+    </div>
+
+    <p id="progressText">0% Complete</p>
+
+</div>
+
+
+<!-- FOOD -->
+
+<div class="card">
+
+    <h2>🍽️ Nutrition</h2>
+
+    <div class="food">
+        🥛 Milk / Curd<br>
+        🍌 Banana Shake<br>
+        🫘 Soybean / Dal<br>
+        🥗 Vegetables & Fruits<br>
+        🍚 Normal Home Food<br>
+        💧 Plenty of Water
+    </div>
+
+</div>
+
+
+<!-- NOTICE -->
+
+<div class="card">
+
+    <h2>🔔 Gym Notice</h2>
+
+    <div class="notice">
+        Your membership is currently active.
+        Stay consistent with your workouts and
+        take proper rest between training days.
+    </div>
+
+</div>
+
+
+<button class="reset" onclick="resetProgress()">
+    Reset Workout Progress
+</button>
+
+</div>
+
+
+<!-- BOTTOM NAV -->
+
+<div class="bottom">
+
+    <div class="selected">
+        🏠<br>Home
+    </div>
+
+    <div>
+        🏋️<br>Workout
+    </div>
+
+    <div>
+        📊<br>Progress
+    </div>
+
+    <div>
+        👤<br>Profile
+    </div>
+
+</div>
+
+
+<script>
+
+let completed =
+Number(localStorage.getItem("gymProgress")) || 0;
+
+function updateProgress(){
+
+    let percent =
+    Math.round((completed / 30) * 100);
+
+    if(completed >= 30){
+        completed = 30;
+        document.getElementById("dayText").innerText =
+        "🏆 30 Day Challenge Complete!";
+    }else{
+        document.getElementById("dayText").innerText =
+        "Day " + (completed + 1) + " of 30";
+    }
+
+    document.getElementById("bar").style.width =
+    percent + "%";
+
+    document.getElementById("progressText").innerText =
+    percent + "% Complete";
+}
+
+function completeWorkout(){
+
+    if(completed < 30){
+
+        completed++;
+
+        localStorage.setItem(
+            "gymProgress",
+            completed
+        );
+
+        updateProgress();
+
+        if(completed === 30){
+
+            alert(
+            "🏆 Congratulations Aman!\
+\
+30-Day Challenge Complete!"
+            );
+
+        }else{
+
+            alert(
+            "🔥 Workout Complete!\
+\
+Day " +
+            completed +
+            " finished."
+            );
+
+        }
+
+    }else{
+
+        alert("🏆 Your 30-Day Challenge is already complete!");
+
+    }
+}
+
+function resetProgress(){
+
+    if(confirm("Reset your 30-day workout progress?")){
+
+        completed = 0;
+
+        localStorage.setItem(
+            "gymProgress",
+            0
+        );
+
+        updateProgress();
+
+    }
+}
+
+updateProgress();
+
+</script>
+
+</body>
+</html>
